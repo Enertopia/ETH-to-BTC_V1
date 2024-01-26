@@ -1,0 +1,7 @@
+// Pseudocode for cross-chain communication verification
+function verifyAssetLocking(swapId) {
+    let ethLocked = verifyETHLock(swapId); // Verify ETH is locked on Ethereum
+    let btcLocked = verifyBTCLock(swapId); // Verify BTC is locked on Bitcoin
+
+    return ethLocked && btcLocked;
+}
