@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+import { swapETHforBTC, getSwapStatus } from './swapService'; // Hypothetical service functions
+
+function SwapInterface() {
+    const [swapId, setSwapId] = useState('');
+    const [swapStatus, setSwapStatus] = useState('');
+
+    const initiateSwap = async (ethAmount, btcAmount) => {
+        const id = await swapETHforBTC(ethAmount, btcAmount);
+        setSwapId(id);
+    };
+
+    const checkStatus = async () => {
+        const status = await getSwapStatus(swapId);
+        setSwapStatus(status);
+    };
+
+    return (
+        <div>
+            {/* UI elements to initiate swap and check status */}
+        </div>
+    );
+}
+
+export default SwapInterface;
